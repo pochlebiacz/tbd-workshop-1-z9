@@ -23,8 +23,8 @@ jobs:
       uses: 'google-github-actions/auth@v1'
       with:
         token_format: 'access_token'
-        workload_identity_provider: 'tbd-20251-310269-lab@tbd-20251-310269.iam.gserviceaccount.com'
-        service_account: 'projects/781278634666/locations/global/workloadIdentityPools/github-actions-pool/providers/github-actions-provider'
+        workload_identity_provider: ${{ secrets.GCP_WORKLOAD_IDENTITY_PROVIDER_NAME }}
+        service_account: ${{ secrets.GCP_WORKLOAD_IDENTITY_SA_EMAIL }}
     - name: Terraform Init
       id: init
       run: terraform init -backend-config=env/backend.tfvars
