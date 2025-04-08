@@ -24,7 +24,7 @@ jobs:
       with:
         token_format: 'access_token'
         workload_identity_provider: 'projects/781278634666/locations/global/workloadIdentityPools/github-actions-pool/providers/github-actions-provider'
-        service_account: 'tbd-20251-310269-lab@tbd-20251-310269.iam.gserviceaccount.com'
+        service_account: 'tbd-2025l-310269-lab@tbd-2025l-310269.iam.gserviceaccount.com'
     - name: Terraform Init
       id: init
       run: terraform init -backend-config=env/backend.tfvars
