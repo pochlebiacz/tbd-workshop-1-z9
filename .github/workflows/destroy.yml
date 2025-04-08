@@ -25,6 +25,12 @@ jobs:
         token_format: 'access_token'
         workload_identity_provider: ${{ secrets.GCP_WORKLOAD_IDENTITY_PROVIDER_NAME }}
         service_account: ${{ secrets.GCP_WORKLOAD_IDENTITY_SA_EMAIL }}
+    - name: Debug identity
+      run: |
+        gcloud auth list
+        gcloud config list
+        gcloud auth print-identity-token
+        gcloud auth print-access-token
     - name: Terraform Init
       id: init
       run: terraform init -backend-config=env/backend.tfvars
