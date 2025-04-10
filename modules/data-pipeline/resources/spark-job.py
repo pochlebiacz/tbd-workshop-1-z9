@@ -18,26 +18,23 @@ import tempfile
 from pyspark.sql import SparkSession
 
 # change to your data bucket
-DATA_BUCKET = "gs://tbd-2025l-9900-data/data/shakespeare/"
+# DATA_BUCKET = "gs://tbd-2025l-9900-data/data/shakespeare/"
+DATA_BUCKET = "gs://tbd-2025l-310269-data/data/weather/"
 
-spark = SparkSession.builder.appName('Shakespeare WordCount').getOrCreate()
+spark = SparkSession.builder.appName('Weather Rainfall Sort').getOrCreate()
 
-table = 'bigquery-public-data.samples.shakespeare'
+table = 'bigquery-public-data.samples.weather'
 
 df = spark.read.format('bigquery').load(table)
 # Only these columns will be read
-df = df.select('word', 'word_count')
+df = df.select('Rainfall')
 # The filters that are allowed will be automatically pushed down.
-# Those that are not will be computed client side
-df = df.where("word_count > 0 AND word NOT LIKE '%\\'%'")
-# Further processing is done inside Spark
-df = df.groupBy('word').sum('word_count').withColumnRenamed('sum(word_count)', 'sum_word_count')
-df = df.orderBy(df['sum_word_count'].desc()).cache()
+df = df.orderBy(df['Rainfall'].desc()).cache()
 
 print('The resulting schema is')
 df.printSchema()
 
-print('The top words in shakespeare are')
+print('Rainfall sorted is')
 df.show()
 df.write.mode("overwrite").orc(DATA_BUCKET)
 
