@@ -100,7 +100,7 @@ create a sample usage profiles and add it to the Infracost task in CI/CD pipelin
     
     ***place the code and output here***
    
-    ***why does ORC not require a table schema?***
+    ORC files don’t require a table schema in BigQuery because they are self-describing - the schema is embedded in the files metadata.
 
 11. Find and correct the error in spark-job.py
 
