@@ -51,16 +51,22 @@ Outputs:
     1. VPC topology with service assignment to subnets
     2. Description of the components of service accounts
 
-      tbd-terraform: This service account is likely used for infrastructure provisioning and management via Terraform, a popular Infrastructure-as-Code (IaC) tool. It would have permissions       to create, modify, or delete cloud resources.
-      iac: This stands for "Infrastructure as Code" and is another service account
+      tbd-terraform: This service account is likely used for infrastructure provisioning and management via Terraform, a popular Infrastructure-as-Code (IaC) tool. It would have permissions       to create, modify, or delete cloud resources.<br />
+      iac: This stands for "Infrastructure as Code" and is another service account<br />
       tbd-composer-sa: This service account is associated with Cloud Composer. It would have permissions to interact with Cloud Composer resources, such as managing Airflow DAGs, accessing        storage buckets, or interacting with other Google Cloud services on behalf of Cloud Composer.
 
     3. List of buckets for disposal
+
+      tbd-conf-bucket<br />
+      tbd-code-bucket<br />
+      tbd-data-bucket<br />
+      tbd-state-bucket
+
     4. Description of network communication (ports, why it is necessary to specify the host for the driver) of Apache Spark running from Vertex AI Workbech
   
     ![image](https://github.com/user-attachments/assets/58e7fb7c-4422-4e24-89dd-dd70bcf1840a)
 
-9. Create a new PR and add costs by entering the expected consumption into Infracost
+10. Create a new PR and add costs by entering the expected consumption into Infracost
 For all the resources of type: `google_artifact_registry`, `google_storage_bucket`, `google_service_networking_connection`
 create a sample usage profiles and add it to the Infracost task in CI/CD pipeline. Usage file [example](https://github.com/infracost/infracost/blob/master/infracost-usage-example.yml) 
 
@@ -68,17 +74,17 @@ create a sample usage profiles and add it to the Infracost task in CI/CD pipelin
 
    ***place the screenshot from infracost output here***
 
-10. Create a BigQuery dataset and an external table using SQL
+11. Create a BigQuery dataset and an external table using SQL
     
     ***place the code and output here***
    
     ***why does ORC not require a table schema?***
 
-11. Find and correct the error in spark-job.py
+12. Find and correct the error in spark-job.py
 
     ***describe the cause and how to find the error***
 
-12. Add support for preemptible/spot instances in a Dataproc cluster
+13. Add support for preemptible/spot instances in a Dataproc cluster
 
     ***place the link to the modified file and inserted terraform code***
     
