@@ -41,8 +41,10 @@ Outputs:
    
 7. Reach YARN UI
    
-gcloud compute instances list --project=tbd-2025l-310269 --filter="zone:(europe-west1*)"
-gcloud compute ssh tbd-cluster-m --project=tbd-2025l-310269 --zone=europe-west1-c --tunnel-through-iap -- -L 8088:localhost:8088
+```gcloud compute instances list --project=tbd-2025l-310269 --filter="zone:(europe-west1*)"```
+
+```gcloud compute ssh tbd-cluster-m --project=tbd-2025l-310269 --zone=europe-west1-c --tunnel-through-iap -- -L 8088:localhost:8088```
+
    ![image](https://github.com/user-attachments/assets/51323a5e-f96f-4f62-891f-db5754ca8735)
 
 8. Draw an architecture diagram (e.g. in draw.io) that includes:
