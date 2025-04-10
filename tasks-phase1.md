@@ -27,7 +27,19 @@ IMPORTANT ❗ ❗ ❗ Please remember to destroy all the resources after each wo
 
     ![image](https://github.com/user-attachments/assets/9bd1083f-3f7f-4e28-ae00-7eea759191c9)
 
+Module: VPC
+This module sets up a Virtual Private Cloud (VPC) on Google Cloud. It creates a subnet with a specified IP range and regional configuration, sets up routing, and configures a Cloud Router with a NAT gateway for internet access. In addition, it applies firewall rules for secure incoming connections - including those for Identity-Aware Proxy (IAP) access and ensures all internal subnet traffic is allowed.
 
+Inputs:
+- project_name: The name of the Google Cloud project.
+- region: The region where the resources will be deployed (default: europe-west1).
+- network_name: The name given to the VPC.
+- subnet_name: The name assigned to the subnet.
+- subnet_address: The IP range designated for the subnet (default: 10.10.10.0/24).
+
+Outputs:
+- network: The identifier for the created VPC.
+- subnets: A mapping detailing the subnet configuration within the VPC.
    
 7. Reach YARN UI
    
@@ -39,7 +51,7 @@ IMPORTANT ❗ ❗ ❗ Please remember to destroy all the resources after each wo
     3. List of buckets for disposal
     4. Description of network communication (ports, why it is necessary to specify the host for the driver) of Apache Spark running from Vertex AI Workbech
   
-    ***place your diagram here***
+    ![image](https://github.com/user-attachments/assets/58e7fb7c-4422-4e24-89dd-dd70bcf1840a)
 
 9. Create a new PR and add costs by entering the expected consumption into Infracost
 For all the resources of type: `google_artifact_registry`, `google_storage_bucket`, `google_service_networking_connection`
