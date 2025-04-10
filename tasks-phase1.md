@@ -19,12 +19,14 @@ IMPORTANT ❗ ❗ ❗ Please remember to destroy all the resources after each wo
     
     2. Create PR from this branch to **YOUR** master and merge it to make new release. 
     
-    ***place the screenshot from GA after succesfull application of release***
+    
+    ![image](https://github.com/user-attachments/assets/095e1f82-7660-4957-a228-0e651ff1217a)
 
 
 6. Analyze terraform code. Play with terraform plan, terraform graph to investigate different modules.
 
-    ***describe one selected module and put the output of terraform graph for this module here***
+    ![image](https://github.com/user-attachments/assets/6195fd72-e66f-48a4-8b95-05abfc7e4e76)
+
    
 7. Reach YARN UI
    
