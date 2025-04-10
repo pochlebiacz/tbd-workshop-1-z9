@@ -64,8 +64,6 @@ Outputs:
       tbd-state-bucket
 
     4. Description of network communication (ports, why it is necessary to specify the host for the driver) of Apache Spark running from Vertex AI Workbech
-  
-   Apache Spark on Vertex AI Workbench uses ports like 4040 (UI), 7077 (standalone master), 6066 (REST API), 18080 (History Server), and ephemeral ports (1024–65535) for Driver-Worker communication, which must be open in the VPC. Specifying the Driver host (spark.driver.host) as the Workbench’s IP (e.g., in 10.10.0.0/24) is crucial to avoid binding to localhost, ensuring Workers can connect in a distributed setup.
 
 10. Create a new PR and add costs by entering the expected consumption into Infracost
 For all the resources of type: `google_artifact_registry`, `google_storage_bucket`, `google_service_networking_connection`
