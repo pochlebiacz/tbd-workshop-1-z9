@@ -69,28 +69,28 @@ Outputs:
 For all the resources of type: `google_artifact_registry`, `google_storage_bucket`, `google_service_networking_connection`
 create a sample usage profiles and add it to the Infracost task in CI/CD pipeline. Usage file [example](https://github.com/infracost/infracost/blob/master/infracost-usage-example.yml) 
 
-   version: 1.0
- usage:
-   google_artifact_registry.registry:
+   version: 1.0<br />
+ usage:<br />
+   google_artifact_registry.registry:<br />
      storage_gb: 100
 
-   google_storage_bucket.tbd_code_bucket:
-     storage_gb: 150
-     monthly_class_a_operations: 50
-     monthly_class_b_operations: 100
-     monthly_egress_data_gb: 30
+   google_storage_bucket.tbd_code_bucket:<br />
+     storage_gb: 150<br />
+     monthly_class_a_operations: 50<br />
+     monthly_class_b_operations: 100<br />
+     monthly_egress_data_gb: 30<br />
 
    google_storage_bucket.tbd_data_bucket:
-     storage_gb: 500
-     monthly_class_a_operations: 50
-     monthly_class_b_operations: 80
-     monthly_egress_data_transfer_gb:
-       same_continent: 80
-       worldwide: 200
-       asia: 40
-       china: 30
+     storage_gb: 500<br />
+     monthly_class_a_operations: 50<br />
+     monthly_class_b_operations: 80<br />
+     monthly_egress_data_transfer_gb:<br />
+       same_continent: 80<br />
+       worldwide: 200<br />
+       asia: 40<br />
+       china: 30<br />
 
-   google_service_networking_connection.private_vpc_connection:
+   google_service_networking_connection.private_vpc_connection:<br />
      monthly_data_processed_gb: 100
 
    ![image](https://github.com/user-attachments/assets/62b34f33-48ea-4fdf-8a7d-dd1cb40389a5)
