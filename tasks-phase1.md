@@ -107,7 +107,10 @@ create a sample usage profiles and add it to the Infracost task in CI/CD pipelin
     ***describe the cause and how to find the error***
 
 12. Add support for preemptible/spot instances in a Dataproc cluster
+    ['modules/dataproc/main.tf'](url)
 
-    ***place the link to the modified file and inserted terraform code***
+    preemptible_worker_config {
+      num_instances = 1
+    }
     
     
