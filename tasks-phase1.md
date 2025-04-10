@@ -97,15 +97,17 @@ create a sample usage profiles and add it to the Infracost task in CI/CD pipelin
    ![image](https://github.com/user-attachments/assets/62b34f33-48ea-4fdf-8a7d-dd1cb40389a5)
 
 10. Create a BigQuery dataset and an external table using SQL
-    
-    ***place the code and output here***
-   
+
+    ![image](https://github.com/user-attachments/assets/c2979068-e530-4bba-9c2b-5416c0c7752f)
+
     ORC files don’t require a table schema in BigQuery because they are self-describing - the schema is embedded in the files metadata.
 
 11. Find and correct the error in spark-job.py
 
-    ***describe the cause and how to find the error***
+    [modules/data-pipeline/resources/spark-job.py](url)
 
+    DATA_BUCKET = "gs://tbd-2025l-9900-data/data/shakespeare/" -> "gs://tbd-2025l-310269-data/data/weather/"
+    
 12. Add support for preemptible/spot instances in a Dataproc cluster
     
     ['modules/dataproc/main.tf'](url)
