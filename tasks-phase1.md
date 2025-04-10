@@ -46,6 +46,11 @@ Outputs:
 8. Draw an architecture diagram (e.g. in draw.io) that includes:
     1. VPC topology with service assignment to subnets
     2. Description of the components of service accounts
+
+      tbd-terraform: This service account is likely used for infrastructure provisioning and management via Terraform, a popular Infrastructure-as-Code (IaC) tool. It would have permissions       to create, modify, or delete cloud resources.
+      iac: This stands for "Infrastructure as Code" and is another service account
+      tbd-composer-sa: This service account is associated with Cloud Composer. It would have permissions to interact with Cloud Composer resources, such as managing Airflow DAGs, accessing        storage buckets, or interacting with other Google Cloud services on behalf of Cloud Composer.
+
     3. List of buckets for disposal
     4. Description of network communication (ports, why it is necessary to specify the host for the driver) of Apache Spark running from Vertex AI Workbech
   
