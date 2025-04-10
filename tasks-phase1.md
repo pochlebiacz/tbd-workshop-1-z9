@@ -69,21 +69,43 @@ Outputs:
 For all the resources of type: `google_artifact_registry`, `google_storage_bucket`, `google_service_networking_connection`
 create a sample usage profiles and add it to the Infracost task in CI/CD pipeline. Usage file [example](https://github.com/infracost/infracost/blob/master/infracost-usage-example.yml) 
 
-   ***place the expected consumption you entered here***
+   version: 1.0
+ usage:
+   google_artifact_registry.registry:
+     storage_gb: 100
 
-   ***place the screenshot from infracost output here***
+   google_storage_bucket.tbd_code_bucket:
+     storage_gb: 150
+     monthly_class_a_operations: 50
+     monthly_class_b_operations: 100
+     monthly_egress_data_gb: 30
 
-11. Create a BigQuery dataset and an external table using SQL
+   google_storage_bucket.tbd_data_bucket:
+     storage_gb: 500
+     monthly_class_a_operations: 50
+     monthly_class_b_operations: 80
+     monthly_egress_data_transfer_gb:
+       same_continent: 80
+       worldwide: 200
+       asia: 40
+       china: 30
+
+   google_service_networking_connection.private_vpc_connection:
+     monthly_data_processed_gb: 100
+
+   ![image](https://github.com/user-attachments/assets/62b34f33-48ea-4fdf-8a7d-dd1cb40389a5)
+
+10. Create a BigQuery dataset and an external table using SQL
     
     ***place the code and output here***
    
     ***why does ORC not require a table schema?***
 
-12. Find and correct the error in spark-job.py
+11. Find and correct the error in spark-job.py
 
     ***describe the cause and how to find the error***
 
-13. Add support for preemptible/spot instances in a Dataproc cluster
+12. Add support for preemptible/spot instances in a Dataproc cluster
 
     ***place the link to the modified file and inserted terraform code***
     
