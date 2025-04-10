@@ -104,8 +104,10 @@ create a sample usage profiles and add it to the Infracost task in CI/CD pipelin
 
 11. Find and correct the error in spark-job.py
 
-    ***describe the cause and how to find the error***
+    [modules/data-pipeline/resources/spark-job.py](url)
 
+    DATA_BUCKET = "gs://tbd-2025l-9900-data/data/shakespeare/" -> "gs://tbd-2025l-310269-data/data/weather/"
+    
 12. Add support for preemptible/spot instances in a Dataproc cluster
     
     ['modules/dataproc/main.tf'](url)
